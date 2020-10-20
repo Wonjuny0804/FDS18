@@ -17,6 +17,13 @@ body {
     font-size: 1.4rem;
     color: #181818;
     background: #fff;
+
+}
+/* Link style */
+a {
+    color : inherit;  /* 색을 상속하도록한다.  */
+    text-decoration: none; /* 밑줄 없게 한다.*/
+   
 }
 .skip-nav {
   display: none;
@@ -28,13 +35,34 @@ body {
 .main,
 .slogan {
     width: 940px;
-    border: 10px solid red;
+    /* border:solid red; */
     margin: 0 auto;
    
 }
+/* Header */
 .header {
-    background: yellow;
+    position: relative;
+    background: rgb(226, 226, 47);
+    border-radius: 0 0 15px 15px; /* 왼위 오위 오아래 왼아래 => 시계방향*/
 }
+/*logo*/
+.logo {
+    /* background-color: blue; */
+    position: absolute;
+    top: 50px;
+    left: 65px;
+    margin: 0;
+    
+}
+/*안내 링크 목록 */
+.member {
+    display: block;
+    list-style: none;
+    margin: 0;
+    text-align: right;
+    color: red;
+}
+
 .visual {
     background: lime;
     height: 120px;
@@ -48,27 +76,36 @@ body {
     overflow: hidden;
     min-height: 450px;
 }
+.member li{
+    display: inline-block;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    padding: 2px 0;
+}
+.member a{
+    padding: 6px 0;
+    display: inline-block;
+    background-color: pink;
+}
 
 .group {
     /*height: 200px;*/
     margin: 0 15px;
 }
 .group1 {
-    background: blueviolet;
+    background: rgb(45, 57, 233);
     width: 250px;
-    float : right;
+    float : left;
 }
 
 .group2 {
-    background: lightgreen;
+    background: rgb(255, 255, 255);
     width: 380px;
-    float: right;
+    float: left;
 }
-
-
-
 .group3 {
-    background: tomato;
+    background: rgb(248, 46, 10);
     width: 150px;
     float:left;
 }
