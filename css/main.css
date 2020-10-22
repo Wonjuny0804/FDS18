@@ -187,9 +187,46 @@ a {
     }
 }
 .visual {
-    background: #389393;
     height: 120px;
     position: relative;
+}
+.visual::before, .visual::after {
+    content: ""; /*why do this?*/
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat:no-repeat; /* -> why?*/
+    animation-name:bgAni;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-direction:alternate;
+    animation: bgAni 2000ms alternate infinite ease-in-out;
+}
+.visual::before {
+    /* animation-name: bgAni;
+    animation-duration: 3000ms; */
+    background: url(../images/ani_flower_01.png) no-repeat 0 -10px, 
+    url(../images/ani_flower_02.png) no-repeat 0 -10px;
+    background-position:  0 -10px, 670px 0;
+}
+.visual::after {
+    background: url(../images/ani_flower_03.png) no-repeat 0 -10px, 
+    url(../images/ani_flower_04.png) no-repeat 0 -10px;
+    background-position:  300px 0, 800px 0;
+    /* animation-name: bgAni;
+    animation-duration: 1500ms; */
+    animation-delay: 2000ms;
+}
+@keyframes bgAni{
+    /* 50% { opacity: 0; } */
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.5;
+    }
 }
 .visual-text {
     /* position: absolute; */
