@@ -43,7 +43,6 @@ a {
 .main,
 .slogan {
     width: 940px;
-    /* border:solid red; */
     margin: 0 auto;
    
 }
@@ -65,16 +64,22 @@ a {
 }
 /*안내 링크 목록 */
 .member {
-    display: block;
     list-style: none;
     margin: 0;
     text-align: right;
     color:#fa7f72;
 }
+.member li {
+    display :inline-block;
+    padding: 2px 0;
+}
+.member a {
+    padding: 6px 0;
+    display :inline-block;
+}
 /*네비게이션*/
 .navigation {
     padding-bottom: 35px;
-
 }
 .menu {
     background:linear-gradient(
@@ -84,17 +89,17 @@ a {
         #f4bb00 100%
     );
     border-top: 2px solid currentColor;
-    border-radius: 0 0 5px 5px;
     margin:10 0 0 0;
-    padding-left:225px;
+    padding-left: none;
     list-style: none; 
     height: 47px;
+    border-radius: 0 0 5px 5px;
+    padding-left:225px;
 
 }
 .menu-item {
     position: relative;
     float: left;
-    padding: 0 5px;
 }
 .menu-button {
     cursor: pointer;
@@ -102,12 +107,12 @@ a {
     color:#fff;
     font-weight: 700;
     background-color:transparent;
-    display:block;
     line-height:45px;
+    display:block;
     padding: 0 12px;
     border: 0;
     border-left: 2px solid rgba(255, 255, 255, 0.5);
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+    text-shadow:1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
     
 }
 .menu-act .menu-button {
@@ -115,26 +120,27 @@ a {
     
 }
 .menu-act .menu-button::after {
-    content:"상자";
-    background-color: blueviolet;
+    content:"";
     display: block;
+    border-top: 2px solid #000;
 
 }
 .sub-menu {
-    width: 500px;
     margin: 0;
     padding-left: 0;
     list-style: none;
     position: absolute;
-    background: pink;
     display: none;
-    top:47;
-    left:0;
+    top:47px;
     white-space: nowrap;
 }
-.sub-menu li {
-    float:left;
+.sub-menu li, .sub-menu a{
+    display: inline-block;
 }
+.sub-menu a {
+    padding: 8px 0;
+    margin-right: 10px;
+  }
 .sub-menu a::before {
     content: '\f192';
     font-family: "fontello";
@@ -146,30 +152,53 @@ a {
 /* .sub-menu a:hover::before{
     content: '\e800';
 } */
+.sub-menu a:hover::before,
 .sub-menu a:focus::before {
     content: '\e800';
-}
-.sub-menu li, .sub-menu a{
-    padding: 8px, 0;
-    /* background-color: skyblue; */
-    display: inline-block;
 }
 .menu-act .sub-menu {
     display: block;
 }
-.sub-menu1,.sub-menu2,.sub-menu3{
-    display:none;
+.sub-menu1,
+.sub-menu2,
+.sub-menu3{
     left: 0;
 }
-.sub-menu4, .sub-menu5, .sub-menu6 {
-    display:block;
+.sub-menu4,
+.sub-menu5,
+.sub-menu6 {
     right:0;
-    left: initial;
 }
-
+/* 텍스트 및 배경 애니메이션 - 비주얼 */
+@keyframes textAni{
+    0%{
+        font-size:12px;
+        color: rgba(0,.0,.0,.0);
+        /* padding-top:0; */
+        /* padding-left:0; */
+        transform: translate(0,0)
+    }
+    100%{
+        font-size:24px;
+        color: rgba(0,0, 0, 1);
+        /* padding-top: 45px; */
+        /* padding-left: 480px; */
+        transform: translate(400px, 75px)
+    }
+}
 .visual {
     background: #389393;
     height: 120px;
+    position: relative;
+}
+.visual-text {
+    /* position: absolute; */
+    width: 500px;
+    margin:0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    animation-name: textAni;
+    animation-duration: 3000ms;
+    animation-fill-mode: forwards;  
 }
 .main {
     background: skyblue;
@@ -208,7 +237,7 @@ a {
 .group3 {
     background: rgb(248, 46, 10);
     width: 150px;
-    float:left;
+    float:left
 }
 .slogan {
     background: orange;
