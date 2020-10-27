@@ -444,7 +444,7 @@ body {
 }
 .validation-list a{
   display: block;
-  background: url("images/validation_icon.png") no-repeat 15px 50%,
+  background: url("../images/validation_icon.png") no-repeat 15px 50%,
               linear-gradient(to bottom, #ccc, #eee);
   border: 1px solid #aaa;
   border-radius: 30px;

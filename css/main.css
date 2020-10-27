@@ -222,12 +222,9 @@ a {
     animation-delay: 2000ms;
 }
 @keyframes bgAni{
-    /* 50% { opacity: 0; } */
     0% {
-        opacity: 0;
     }
-    100% {
-        opacity: 0.5;
+    100% { 
     }
 }
 .visual-text {
@@ -275,6 +272,83 @@ fieldset {
 .group2 {
     width: 380px;
 }
+
+/* 공지사항과 자료실 */ 
+.board {
+    position: relative;
+    height: 200px;
+    margin-top: 20px;
+}
+
+.notice-list, 
+.pds-list, 
+.noitce-more, 
+.pds-more {
+    display: none;
+}
+.is-active .pds-list,
+.is-active .notice-list,
+.is-active .notice-more,
+.is-active .pds-more {
+    display: block;
+    
+}
+.noitce-list, .pds-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    background: skyblue;
+    position: absolute;
+    left: 0;
+    top: 45px;
+    width: 100%;
+}
+.notice-more,
+.pds-more {
+    position: absolute;
+    top:-8px;
+    right: -8px;
+    padding: 8px;
+}
+.notice-more::before,
+.pds-more::before {
+    color: hsla(110,50%,30%,1)
+}
+.tab {
+    float: left;
+    margin: 0;
+}
+.tab a {
+    display: block;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #aaa;
+    background: #ccc linear-gradient(#ccc #eee);
+    color: #999;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 5px 10px;
+}
+.is-active .tab a{
+    color: #ed702d;
+    border-color: #ed702d #ed702d #fff #ed702d;
+    background: #fff;  
+}
+
+.notice-list li,
+.pds-more li {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 10px;
+    
+}
+.notice-list a, 
+.pds-list a {
+    flex-grow: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 250px;
+    overflow: hidden;
+}
 .group3 {
     width: 150px;
 }
@@ -289,7 +363,6 @@ fieldset {
 }
 .login-heading {
     margin: 0;
-    color: #ff0;
     font-size: 1.6rem;
     font-weight: 700;
     text-indent: 10px;
