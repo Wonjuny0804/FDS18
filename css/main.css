@@ -3,7 +3,8 @@
 @import url(../css/fontello.css);
 
 /* 숨김 제목 및 숨김 콘텐츠*/
-.a11y-hidden, legend {
+.a11y-hidden, 
+legend {
     position: absolute; 
     width: 1px;
     height:1px;
@@ -253,7 +254,6 @@ a {
 .member a{
     padding: 6px 0;
     display: inline-block;
-    background-color: pink;
 }
 
 .group {
@@ -266,7 +266,10 @@ a {
     width: 250px;
     /* float : left; */
 }
-fieldset {
+.search-form fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
     
 }
 .group2 {
@@ -276,13 +279,12 @@ fieldset {
 /* 공지사항과 자료실 */ 
 .board {
     position: relative;
-    height: 200px;
     margin-top: 20px;
 }
 
 .notice-list, 
 .pds-list, 
-.noitce-more, 
+.notice-more, 
 .pds-more {
     display: none;
 }
@@ -293,15 +295,42 @@ fieldset {
     display: block;
     
 }
-.noitce-list, .pds-list {
+.tab {
+    /* float: left; */
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.is-active .tab {
+    z-index: 5;
+}
+.notice-heading {
+    left:0;
+}
+.pds-heading {
+    left: 78px;
+}
+.tab a {
+    display: block;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #aaa;
+    background: #ccc linear-gradient(#ccc #eee);
+    color: #999;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 5px 10px;
+}
+.notice-list, .pds-list {
     list-style-type: none;
     padding-left: 0;
     margin: 0;
-    background: skyblue;
-    position: absolute;
+    padding-top:45px;
+    /* position: absolute;
     left: 0;
-    top: 45px;
+    top: 45px; */
     width: 100%;
+    min-height: 170px;
 }
 .notice-more,
 .pds-more {
@@ -314,19 +343,8 @@ fieldset {
 .pds-more::before {
     color: hsla(110,50%,30%,1)
 }
-.tab {
-    float: left;
-    margin: 0;
-}
-.tab a {
-    display: block;
-    border-radius: 5px 5px 0 0;
-    border: 1px solid #aaa;
-    background: #ccc linear-gradient(#ccc #eee);
-    color: #999;
-    font-size: 1.4rem;
-    font-weight: 400;
-    padding: 5px 10px;
+.is-active .tab {
+    z-index: 5;
 }
 .is-active .tab a{
     color: #ed702d;
@@ -335,20 +353,27 @@ fieldset {
 }
 
 .notice-list li,
-.pds-more li {
+.pds-list li {
     display: flex;
     flex-flow: row nowrap;
     margin-bottom: 10px;
-    
+
 }
 .notice-list a, 
 .pds-list a {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 250px;
+    width: 280px;
     overflow: hidden;
 }
+.notice-list, .pds-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-overflow: ellipsis;
+  }
+
 .group3 {
     width: 150px;
 }
@@ -378,7 +403,7 @@ fieldset {
     border: 0;
     padding: 0 0 5px 0;
     margin: 0;
-    border-radius: 5px 5px 0 0 ;
+    border-radius: 5px;
     position: relative;
     border-bottom: 1px solid black;
 }
@@ -456,9 +481,109 @@ fieldset {
     padding: 7px 10px 7px 55px;
     margin-top: 10px;
 }
-.validation-list a:hover{
-    color:#aaf;         
+.validation-list a:hover
+.validation-list :focus {
+    color:#f00;         
 }
+.term {
+    border: 1px solid #aaa;
+    background: linear-gradient(#ccc, #eee);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  
+  .term-heading {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  
+  .term-list {
+    margin: 15px 0 0 0;
+  }
+  
+  .term-list>div {
+    overflow: hidden;
+  }
+  
+  .term-list div:nth-child(even) {
+    margin-top: 15px;
+  }
+  
+  .term-list-subject,
+  .term-list-brief {
+    float: right;
+    width: 145px;
+  }
+  
+  .term-list-subject {
+    color: #296897;
+  }
+  
+  .term-list-thumbnail {
+    float: left;
+  }
+  
+  .term-list-thumbnail img {
+    display: block;
+  }
+  
+  .term-list-brief {
+    margin-top: 5px;
+    line-height: 1.5;
+  }
+  
+  .term-list dd {
+    margin-left: 0;
+  }
+  
+  .term-list div:nth-child(even) .term-list-subject,
+  .term-list div:nth-child(even) .term-list-brief {
+    float: left;
+  }
+  
+  .term-list div:nth-child(even) .term-list-thumbnail {
+    float: right;
+  }
+  
+  /* 검색 폼 */
+.search-form {
+    background: #ccc linear-gradient(#ccc, #eee);
+    border: 1px solid #aaa;
+    border-bottom-color: #fff;
+    border-radius: 15px 15px 0 0;
+    padding: 15px 25px 10px;
+  }
+  
+  .search-form fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .search-form-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-form [name="search"] {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 1px 1px 1px 0.5em;
+    height: 22px;
+    width: 190px;
+  }
+  .btn-search {
+    background-color: #333;
+    border: 1px solid #aaa;
+    color: #fff;
+    border-radius: 3px;
+    height: 22px;
+    padding: 0 10px;
+  }
 .slogan {
     background: orange;
 }

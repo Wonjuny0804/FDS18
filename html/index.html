@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>웹카페-고정형 레이아웃</title>
     <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/index.js"></script>
   </head>
 
   <body>
@@ -218,7 +220,7 @@
           </fieldset>
         </form>
         <div class="board">
-          <section class="notice">
+          <section class="notice is-active">
             <h2 class="notice-heading tab" id="noticeHeading">
               <a href="#" role="button">공지사항</a>
             </h2>
@@ -243,11 +245,19 @@
                 <a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다.</a>
                 <time datetime="2018-05-31T13:53:45">2018.05.31</time>
               </li>
+              <!-- <li>
+                <a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a>
+                <time datetime="2018-05-31T13:53:45">2018.05.31</time>
+              </li>
+              <li>
+                <a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다.</a>
+                <time datetime="2018-05-31T13:53:45">2018.05.31</time>
+              </li> -->
             </ul>
             <a href="#" title="공지사항" class="notice-more icon-plus"
             aria-labelledby="noticeHeading">더보기</a>
           </section>
-          <section class="pds">
+          <section class="pds is-active">
             <h2 class="pds-heading tab" id="pdsHeading">
               <a href="#" role="button">자료실</a>
             </h2>
@@ -275,8 +285,10 @@
             </ul>
             <a href="#" title="자료실" class="pds-more icon-plus" aria-labelledby="pdfHeading">더보기</a>
           </section>
-          
         </div>
+        <section class="news">
+          <h2 class="news-heading">새소식</h2>
+        </section>
       </div>
       <div class="group group3">group3</div>
     </main>
